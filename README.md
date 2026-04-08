@@ -5,6 +5,9 @@ This project applies deep learning to a computer vision classification task invo
 
 This staged version is set up so the trained CNN artifact is included for inference and inspection, while the oversized raw training array is documented separately rather than committed directly.
 
+## Coursework Context
+This repository packages work originally completed as part of Western Governors University's (WGU) M.S. in Data Analytics program and reorganizes it into a public portfolio format. Screenshots extracted from the original written submission are preserved in `assets/report-extracts/`.
+
 ## What It Shows
 - image preprocessing for a CNN workflow
 - supervised multi-class classification
