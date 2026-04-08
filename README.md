@@ -41,9 +41,3 @@ This repository packages work originally completed as part of Western Governors 
 This repo follows a hybrid portfolio approach:
 - include the trained model so reviewers can inspect or load it
 - document the missing training array transparently in `data/README.md`
-
-## Suggested Next Additions
-- training and validation curves
-- confusion matrix
-- sample predictions
-- a few representative images for each class
