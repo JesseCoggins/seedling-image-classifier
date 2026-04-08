@@ -28,6 +28,12 @@ This repository packages work originally completed as part of Western Governors 
 - access to class labels and label metadata
 - loading the trained `.keras` model for inference-oriented inspection
 
+## Results
+
+- The trained CNN achieved test accuracy of `0.6662` (`66.62%`) across `12` plant seedling classes.
+- Class-level performance was strongest on Common Chickweed (`0.83` F1) and Common wheat (`0.83` F1).
+- More visually similar species such as Shepherd's Purse (`0.42` F1), Fat Hen (`0.50` F1), and Scentless Mayweed (`0.56` F1) remained more challenging, which is typical in fine-grained image classification.
+
 ## Selected Visuals
 
 ![Seedling report visual 1](assets/report-extracts/report_image_01.png)
