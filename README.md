@@ -47,7 +47,3 @@ This project was completed as part of my M.S. in Data Analytics program at Weste
 This repo follows a hybrid portfolio approach:
 - include the trained model so reviewers can inspect or load it
 - document the missing training array transparently in `data/README.md`
-
----
-
-*\* I used Claude (Anthropic) to help organize and stage this coursework into a GitHub portfolio repository. The analysis, code, and results are entirely my own.*
