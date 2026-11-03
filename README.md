@@ -1,49 +1,38 @@
-# Seedling Image Classifier
+# Identifying plant seedlings from images
 
-## Overview
-This project applies deep learning to a computer vision classification task involving plant seedlings. The notebook covers image preprocessing, model training, and evaluation for a multi-class image classification problem.
+I trained a convolutional neural network to distinguish **12 seedling species** from photographs. It classified **66.62% of 713 held-out images** correctly. For a botanist sorting images of crops and weeds, the class-by-class results matter more than a single accuracy figure. The model recognized Common wheat much more reliably than Shepherd’s Purse.
 
-The trained model is included. To reproduce preprocessing and training, [download the original 223 MiB image array and verify its checksum](data/README.md).
-
-## How a botanist could use the labels
-
-Distinguishing crops from weeds early helps a field team decide which plants need attention. The classifier could give a botanist a first-pass species label while sorting images. Common wheat reached an F1 score of 0.83, while Shepherd’s Purse reached 0.42. That gap is a reason to keep expert review in the workflow before taking action in the field.
-
-## Academic Context
-Completed during my M.S. in Data Analytics at Western Governors University (WGU), then packaged here as a public portfolio project. Screenshots from the original written submission are preserved in `assets/report-extracts/`.
-
-## What It Shows
-- image preprocessing for a CNN workflow
-- supervised multi-class classification
-- TensorFlow/Keras deep learning workflow
-- model evaluation and class labeling
-
-## Included Files
-- `notebooks/seedling_cnn_classifier.ipynb`
-- `data/class_names.csv`
-- `data/seedling_dataset/labels.csv`
-- `data/README.md`
-- `models/seedling_classifier_model.keras`
-- `models/README.md`
-- `requirements.txt`
-
-## What Works Out Of The Box
-- model architecture review in the notebook
-- access to class labels and label metadata
-- loading the trained `.keras` model for inference-oriented inspection
+[Inspect the training and evaluation notebook](notebooks/seedling_cnn_classifier.ipynb) · [Download the trained Keras model](models/seedling_classifier_model.keras) · [Set up the training images](data/README.md)
 
 ## Results
 
-- The trained CNN achieved test accuracy of `0.6662` (`66.62%`) across `12` plant seedling classes.
-- Class-level performance was strongest on Common Chickweed (`0.83` F1) and Common wheat (`0.83` F1).
-- More visually similar species such as Shepherd's Purse (`0.42` F1), Fat Hen (`0.50` F1), and Scentless Mayweed (`0.56` F1) remained more challenging, which is typical in fine-grained image classification.
+| Species | Test F1 score |
+|---|---:|
+| Common Chickweed | 0.83 |
+| Common wheat | 0.83 |
+| Scentless Mayweed | 0.56 |
+| Fat Hen | 0.50 |
+| Shepherd’s Purse | 0.42 |
 
-## Selected Visuals
+F1 summarizes how often a species label is correct and how often the classifier finds that species. The results support trying a first-pass sorting workflow with expert review for easily confused seedlings. A field evaluation would be needed before using the labels to guide treatment. The notebook includes a confusion matrix and scores for all 12 classes. [Coursework figures](assets/report-extracts/)
 
-![Seedling report visual 1](assets/report-extracts/report_image_01.png)
+## How I built it
 
-![Seedling report visual 2](assets/report-extracts/report_image_02.png)
+- Normalized 4,750 RGB images of 128 × 128 pixels and stratified the split into 3,325 training, 712 validation and 713 test images.
+- Used two convolution and max-pooling blocks, a 128-unit dense layer with dropout, and a 12-class softmax output.
+- Trained with image augmentation and class weights. Early stopping monitored validation loss and restored the best weights. The notebook calculates class weights from the full label distribution.
 
-## Rerun the training notebook
+## Inspect or retrain
 
-Follow the [dataset setup instructions](data/README.md) to put the images next to the included labels. The public archive matches the original coursework array.
+The saved model and [class names in output order](data/class_names.csv) are included. For a quick inspection, run this from the repository root in a Python environment with the [requirements](requirements.txt) installed.
+
+~~~python
+from tensorflow.keras.models import load_model
+
+model = load_model("models/seedling_classifier_model.keras", compile=False)
+model.summary()
+~~~
+
+To retrain, follow the [download and checksum instructions](data/README.md) for the matching 223 MiB image array. Place it next to the included labels and run the notebook with `notebooks/` as the working directory.
+
+*WGU M.S. in Data Analytics coursework, D604 Advanced Analytics.*
