@@ -5,6 +5,10 @@ This project applies deep learning to a computer vision classification task invo
 
 The trained model is included. To reproduce preprocessing and training, [download the original 223 MiB image array and verify its checksum](data/README.md).
 
+## How a botanist could use the labels
+
+Distinguishing crops from weeds early helps a field team decide which plants need attention. The classifier could give a botanist a first-pass species label while sorting images. Common wheat reached an F1 score of 0.83, while Shepherd’s Purse reached 0.42. That gap is a reason to keep expert review in the workflow before taking action in the field.
+
 ## Academic Context
 Completed during my M.S. in Data Analytics at Western Governors University (WGU), then packaged here as a public portfolio project. Screenshots from the original written submission are preserved in `assets/report-extracts/`.
 
