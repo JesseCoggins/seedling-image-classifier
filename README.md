@@ -3,7 +3,7 @@
 ## Overview
 This project applies deep learning to a computer vision classification task involving plant seedlings. The notebook covers image preprocessing, model training, and evaluation for a multi-class image classification problem.
 
-The trained model artifact is included so it can be loaded or inspected without retraining. The raw image training array (~223 MB) exceeds GitHub's file size limits and isn't included — that's documented in `data/README.md`.
+The trained model is included. To reproduce preprocessing and training, [download the original 223 MiB image array and verify its checksum](data/README.md).
 
 ## Academic Context
 Completed during my M.S. in Data Analytics at Western Governors University (WGU), then packaged here as a public portfolio project. Screenshots from the original written submission are preserved in `assets/report-extracts/`.
@@ -40,10 +40,6 @@ Completed during my M.S. in Data Analytics at Western Governors University (WGU)
 
 ![Seedling report visual 2](assets/report-extracts/report_image_02.png)
 
-## Remaining Limitation
-- the original `images.npy` training array is about 223 MB and exceeds normal GitHub limits, so it is not included in this repo
+## Rerun the training notebook
 
-## Note
-This repo follows a hybrid portfolio approach:
-- include the trained model so reviewers can inspect or load it
-- document the missing training array transparently in `data/README.md`
+Follow the [dataset setup instructions](data/README.md) to put the images next to the included labels. The public archive matches the original coursework array.
