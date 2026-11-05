@@ -2,6 +2,10 @@
 
 I trained a convolutional neural network to distinguish **12 seedling species** from photographs. It classified **66.62% of 713 held-out images** correctly. For a botanist sorting images of crops and weeds, the class-by-class results matter more than a single accuracy figure. The model recognized Common wheat much more reliably than Shepherd’s Purse.
 
+![Confusion matrix for the twelve seedling species on the held-out images](assets/seedling-test-confusion.png)
+
+*Confusion matrix across 12 species on 713 held-out images.*
+
 [Inspect the training and evaluation notebook](notebooks/seedling_cnn_classifier.ipynb) · [Download the trained Keras model](models/seedling_classifier_model.keras) · [Set up the training images](data/README.md)
 
 ## Results
