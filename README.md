@@ -14,15 +14,15 @@ I trained a convolutional neural network to distinguish **12 seedling species** 
 | Fat Hen | 0.50 |
 | Shepherd’s Purse | 0.42 |
 
-F1 summarizes how often a species label is correct and how often the classifier finds that species. The results support trying a first-pass sorting workflow with expert review for easily confused seedlings. A field evaluation would be needed before using the labels to guide treatment. The notebook includes a confusion matrix and scores for all 12 classes. [Figures from the project report](assets/report-extracts/)
+F1 summarizes how often a species label is correct and how often the classifier finds that species. The results support trying a first-pass sorting workflow with expert review for easily confused seedlings. I would test the model on field images before using its labels to guide treatment. The notebook includes a confusion matrix and scores for all 12 classes. [Figures from the project report](assets/report-extracts/)
 
 ## How I built it
 
 - Normalized 4,750 RGB images of 128 × 128 pixels and stratified the split into 3,325 training, 712 validation and 713 test images.
 - Used two convolution and max-pooling blocks, a 128-unit dense layer with dropout, and a 12-class softmax output.
-- Trained with image augmentation and class weights. Early stopping monitored validation loss and restored the best weights. The notebook calculates class weights from the full label distribution.
+- Trained with image augmentation and class weights. Early stopping monitored validation loss and restored the best weights. I calculated class weights from the full label distribution.
 
-## Inspect or retrain
+## Run it yourself
 
 The saved model and [class names in output order](data/class_names.csv) are included. For a quick inspection, run this from the repository root in a Python environment with the [requirements](requirements.txt) installed.
 
