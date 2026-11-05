@@ -1,10 +1,3 @@
-# Model Artifact
+# Trained seedling classifier
 
-This repo includes a trained Keras model:
-- `seedling_classifier_model.keras`
-
-Why it is included:
-- it is under GitHub's 100 MB hard file limit
-- it allows reviewers to inspect or load the trained CNN without retraining from scratch
-
-Training the model end-to-end still requires the original `images.npy` dataset described in `../data/README.md`.
+`seedling_classifier_model.keras` is the trained 12-class CNN used for the notebook evaluation. Load it for inspection or inference without retraining. Input images are 128 × 128 RGB arrays normalized to [0, 1]; use the notebook’s label order. See the [data and attribution notes](../data/README.md).

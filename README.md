@@ -35,4 +35,8 @@ model.summary()
 
 To retrain, follow the [download and checksum instructions](data/README.md) for the matching 223 MiB image array. Place it next to the included labels and run the notebook with `notebooks/` as the working directory.
 
+## Data and environment
+
+[Data origin and reuse notes](data/README.md). Install [requirements.txt](requirements.txt), which includes [the checked direct package versions](requirements-verified.txt). Saved-model inference was checked on Python 3.13.1 with the pinned direct dependencies against the original held-out arrays, reproducing 475 correct predictions out of 713 (66.62%). The test arrays are not included; use the notebook split and matching source images to reconstruct them. Full training was not rerun. These are direct dependency pins, not a complete transitive lockfile.
+
 *WGU M.S. in Data Analytics coursework, D604 Advanced Analytics.*

@@ -14,3 +14,11 @@ curl --fail --location "https://zenodo.org/records/17586748/files/images.npy?dow
 | `labels.csv` | 4,750 labels in image order | Original MD5 `70ee9b0f7f0b8f586bda591531fd1ca6` |
 
 Git may convert the CSV’s line endings on checkout. Preserve its row order. Open [the training notebook](../notebooks/seedling_cnn_classifier.ipynb) with its working directory set to `notebooks/`. To inspect the model without retraining, use the [saved Keras model](../models/seedling_classifier_model.keras).
+
+## Original source and attribution
+
+The underlying images are from the [Aarhus Plant Seedlings Dataset](https://vision.eng.au.dk/plant-seedlings-dataset/), recorded at Aarhus University Flakkebjerg Research Station with the University of Southern Denmark. Copyright © 2014 Mads Dyrmann, Peter Christiansen, University of Southern Denmark, and Aarhus University. The source page links [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) for images and annotations and requires citation for trained models and other derived work.
+
+Giselsson, T. M., Jørgensen, R. N., Jensen, P. K., Dyrmann, M., and Midtiby, H. S. (2017). *A Public Image Database for Benchmark of Plant Seedling Classification Algorithms*. [arXiv:1711.05458](https://arxiv.org/abs/1711.05458).
+
+The course input is a resized 128 × 128 NumPy image array and aligned labels. The Zenodo record above is a matching download mirror, not the original dataset creator. The notebook normalizes images, augments training samples and trains the included model; it does not claim ownership of the original photographs. The dataset and derived image/label assets retain their source terms. The code’s MIT license does not override them. The included trained model is shared under CC BY-SA 4.0 with this attribution.
