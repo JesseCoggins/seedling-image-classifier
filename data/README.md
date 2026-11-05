@@ -21,4 +21,10 @@ The underlying images are from the [Aarhus Plant Seedlings Dataset](https://visi
 
 Giselsson, T. M., Jørgensen, R. N., Jensen, P. K., Dyrmann, M., and Midtiby, H. S. (2017). *A Public Image Database for Benchmark of Plant Seedling Classification Algorithms*. [arXiv:1711.05458](https://arxiv.org/abs/1711.05458).
 
-The course input is a resized 128 × 128 NumPy image array and aligned labels. The Zenodo record above is a matching download mirror, not the original dataset creator. The notebook normalizes images, augments training samples and trains the included model; it does not claim ownership of the original photographs. The dataset and derived image/label assets retain their source terms. The code’s MIT license does not override them. The included trained model is shared under CC BY-SA 4.0 with this attribution.
+The course input is a resized 128 × 128 NumPy image array and aligned labels. The Zenodo record above is a matching download mirror, not the original dataset creator. The notebook normalizes images, augments training samples and trains the included model; it does not claim ownership of the original photographs. License scope is documented separately for each artifact:
+
+| Artifact | License |
+|---|---|
+| Project code | [MIT](../LICENSE) |
+| Source images and annotations | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), with the source attribution above |
+| Included trained model | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), as stated in the [model notes](../models/README.md) |

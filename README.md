@@ -14,7 +14,7 @@ I trained a convolutional neural network to distinguish **12 seedling species** 
 | Fat Hen | 0.50 |
 | Shepherd’s Purse | 0.42 |
 
-F1 summarizes how often a species label is correct and how often the classifier finds that species. The results support trying a first-pass sorting workflow with expert review for easily confused seedlings. A field evaluation would be needed before using the labels to guide treatment. The notebook includes a confusion matrix and scores for all 12 classes. [Coursework figures](assets/report-extracts/)
+F1 summarizes how often a species label is correct and how often the classifier finds that species. The results support trying a first-pass sorting workflow with expert review for easily confused seedlings. A field evaluation would be needed before using the labels to guide treatment. The notebook includes a confusion matrix and scores for all 12 classes. [Figures from the project report](assets/report-extracts/)
 
 ## How I built it
 
@@ -37,6 +37,7 @@ To retrain, follow the [download and checksum instructions](data/README.md) for 
 
 ## Data and environment
 
-[Data origin and reuse notes](data/README.md). Install [requirements.txt](requirements.txt), which includes [the checked direct package versions](requirements-verified.txt). Saved-model inference was checked on Python 3.13.1 with the pinned direct dependencies against the original held-out arrays, reproducing 475 correct predictions out of 713 (66.62%). The test arrays are not included; use the notebook split and matching source images to reconstruct them. Full training was not rerun. These are direct dependency pins, not a complete transitive lockfile.
+Data: Aarhus seedling images used in the WGU project; [download and attribution](data/README.md).  
+Install: `python -m pip install -r requirements.txt`; [environment details](requirements-verified.txt).
 
 *WGU M.S. in Data Analytics coursework, D604 Advanced Analytics.*
